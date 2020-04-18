@@ -4,7 +4,11 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Game24!</Text>
+      <Text style={styles.titleText}>Game24!</Text>
+      <Text styles={styles.stars}>🌟🌟🌟🌟 </Text>
+      <TouchableOpacity style={styles.gameButton} onPress={() => navigation.navigate('GameScreen')}>
+      <Text style={styles.gameText}>Go To Game!</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -18,7 +22,25 @@ const fontFamilyPicker = Platform.select({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: 'purple',
     alignItems: 'center',
   },
+  gameText: {
+    fontSize:30,
+  
+  },
+  titleText: {
+   // backgroundColor:'green',
+    fontSize: 40,
+  },
+  gameButton: {
+    width: 220,
+    height: 45,
+    textAllign:'center',
+    backgroundColor: "orange",
+    borderRadius: 6,
+  },
+  stars:{
+
+  }
 });
