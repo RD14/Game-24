@@ -22,7 +22,7 @@ const fontFamilyPicker = Platform.select({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'purple',
+    backgroundColor: 'aquamarine',
     alignItems: 'center',
   },
   gameText: {
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     width: 220,
     height: 45,
     textAllign:'center',
-    backgroundColor: "orange",
+    backgroundColor: "gold",
     borderRadius: 6,
   },
   stars:{
