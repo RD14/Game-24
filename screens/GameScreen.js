@@ -34,10 +34,12 @@ export default class GameScreen extends React.Component {
 
     <View style={styles.cardRow}>
       <Text style={styles.cardNumber}>{this.state.card1}</Text>
+      <View style={styles.numberSpacer}></View>
       <Text style={styles.cardNumber}>{this.state.card2}</Text>
     </View>
     <View style={styles.cardRow}>
       <Text style={styles.cardNumber}>{this.state.card3}</Text>
+      <View style={styles.numberSpacer}></View>
       <Text style={styles.cardNumber}>{this.state.card4}</Text>
     </View>
 
@@ -84,7 +86,7 @@ const styles = StyleSheet.create({
   cardNumber:{
     fontSize: 62,
     color: 'white',
-    paddingLeft: 40,
+
   },
   newNumberBtn: {
     backgroundColor: 'teal',
@@ -94,4 +96,7 @@ const styles = StyleSheet.create({
     fontSize: 38,
     color: 'black',
   },
+  numberSpacer: {
+    width:50,
+  }
 });
