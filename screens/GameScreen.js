@@ -32,9 +32,7 @@ export default class GameScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.mainmenuBtn} onPress={() => this.props.navigation.navigate('HomeScreen')}>
-          <Text>Main Menu</Text>
-        </TouchableOpacity>
+        
     <Text style={styles.timerText}>{this.state.minutes}m {this.state.seconds}s</Text>
 
     <View style={styles.cardRow}>
@@ -51,6 +49,9 @@ export default class GameScreen extends React.Component {
     <TouchableOpacity style={styles.newNumberBtn} onPress={this.changeNumbers}>
           <Text style={styles.newNumberText}>New Numbers</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.mainmenuBtn} onPress={() => this.props.navigation.navigate('HomeScreen')}>
+          <Text>Main Menu</Text>
+        </TouchableOpacity>
 
       </View>
     );
@@ -63,6 +64,8 @@ export default class GameScreen extends React.Component {
       card2: newNumbers[1],
       card3: newNumbers[2],
       card4: newNumbers[3 ],
+      seconds: 0,
+      minutes:0,
     })
   }
 }
@@ -79,6 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     borderRadius: 10,
     alignItems: 'center',
+    marginTop:30,
   },
   timerText: {
     fontSize: 32,
