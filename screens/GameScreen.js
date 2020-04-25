@@ -6,7 +6,8 @@ export default class GameScreen extends React.Component {
   constructor() {
     super();
     this.state = {
-      time: 0,
+      seconds: 0,
+      minutes: 0,
       card1: 1,
       card2: 2,
       card3: 3,
@@ -16,7 +17,11 @@ export default class GameScreen extends React.Component {
     this.changeNumbers = this.changeNumbers.bind(this);
 
     setInterval(() => {
-      this.setState({ time: this.state.time + 1 })
+      this.setState({ seconds: this.state.seconds + 1 });
+      if(this.state.seconds===60){
+        this.setState({seconds:0});
+        this.setState({minutes:this.state.minutes+1});
+      }
     }, 1000); 
   } 
 
@@ -30,7 +35,7 @@ export default class GameScreen extends React.Component {
         <TouchableOpacity style={styles.mainmenuBtn} onPress={() => this.props.navigation.navigate('HomeScreen')}>
           <Text>Main Menu</Text>
         </TouchableOpacity>
-    <Text style={styles.timerText}>Seconds Elapsed: {this.state.time}</Text>
+    <Text style={styles.timerText}>{this.state.minutes}m {this.state.seconds}s</Text>
 
     <View style={styles.cardRow}>
       <Text style={styles.cardNumber}>{this.state.card1}</Text>
